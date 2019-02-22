@@ -14,3 +14,17 @@
 		$(".banner").remove();
     }
 });
+
+function isMobile() {
+    var UserAgent = navigator.userAgent;
+
+    if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+if (isMobile()) {   //모바일 환경
+    location.href = "default_m.asp;   
+}

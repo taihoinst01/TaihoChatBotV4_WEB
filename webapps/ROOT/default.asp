@@ -22,18 +22,18 @@
 </head>
 <body>
     <input type="hidden" id="conversationId" />
-    <input type="hidden" id="key"  value="<%=request.form("key") %>"/>
+    <!--<input type="hidden" id="key"  value="<%=request.form("key") %>"/>
     <input type="hidden" id="cjworld_id_get" value="<%=request("cjworld_id") %>"/>
     <input type="hidden" id="cjworld_id_post" value="<%=request.form("cjworld_id") %>"/>
-    <input type="hidden" id="lang"  value="<%=request.form("lang") %>"/>
+    <input type="hidden" id="lang"  value="<%=request.form("lang") %>"/>-->
     <div class="mainBG">
         <!-- 여기서 부터 -->
         <div class="bot-wrap chatOn">
-            <script> 
+            <!--<script> 
                 //두연(get방식으로 넘길때 (+) 특수기호의 경우 삭제 되기 때문에 이 방식으로 다시 값 설정을 해준다.)
                 var encodeVal = encodeURIComponent($('#cjworld_id_get').val()); //get방식으로 넘기기 전에 encode
                 $('#cjworld_id_get').val(encodeVal);
-            </script>
+            </script>-->
             <div id="bot" />
             <script src="assets/js/botchat.js"></script>
             <script>
@@ -47,7 +47,7 @@
                     resize: 'detect'
                 }, document.getElementById("bot"));
             </script>
-            <script src="assets/js/ssoConnect.js"></script>
+            <!--<script src="assets/js/ssoConnect.js"></script>-->
         </div>
         <!-- 끝 -->
     </div>
