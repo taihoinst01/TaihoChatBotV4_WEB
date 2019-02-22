@@ -5,16 +5,17 @@ var ssoFlag = 0;
 //device check(PC, Mobile)
 var deviceChk;
 
-var defaultUrl = 'https://cjemployeechatbot-web.azurewebsites.net/';
-var defaultUrl_pc = 'https://cjemployeechatbot-web.azurewebsites.net/default.asp';
-var defaultUrl_m = 'https://cjemployeechatbot-web.azurewebsites.net/default_m.asp';
 
-var mobileGetId = $('#cjworld_id_get').val();
-if(typeof(mobileGetId) == 'undefined'){
-    location.href = "error_route.html";
-}else if (mobileGetId.length < 24) {
-    location.href = "error_route.html";
-}
+//var defaultUrl = 'https://cjemployeechatbot-web.azurewebsites.net/';
+//var defaultUrl_pc = 'https://cjemployeechatbot-web.azurewebsites.net/default.asp';
+//var defaultUrl_m = 'https://cjemployeechatbot-web.azurewebsites.net/default_m.asp';
+
+//var mobileGetId = $('#cjworld_id_get').val();
+//if(typeof(mobileGetId) == 'undefined'){
+//    location.href = "error_route.html";
+//}else if (mobileGetId.length < 24) {
+//    location.href = "error_route.html";
+//}
 
 ! function (t, e) {
     "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define([], e) : "object" == typeof exports ? exports.BotChat = e() : t.BotChat = e()
@@ -3487,16 +3488,16 @@ if(typeof(mobileGetId) == 'undefined'){
                         //conversationId 추가
                         $('#conversationId').val(e.conversationId);
                         //KSO ssoConnection
-                        if (typeof (e.conversationId) == 'string' && startFlag == 0 &&
-                            (location.href == defaultUrl
-                            || location.href == defaultUrl_pc
-                            || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_pc.html'
-                            || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_m.html'
-                            || location.href == defaultUrl_m + "?cjworld_id=" + mobileGetId)) {
-                            console.log("SSO Connect");
-                            ssoConnection();
-                            startFlag = 1;
-                        }
+                        //if (typeof (e.conversationId) == 'string' && startFlag == 0 &&
+                        //    (location.href == defaultUrl
+                        //    || location.href == defaultUrl_pc
+                        //    || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_pc.html'
+                        //    || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_m.html'
+                        //    || location.href == defaultUrl_m + "?cjworld_id=" + mobileGetId)) {
+                        //    console.log("SSO Connect");
+                        //    ssoConnection();
+                        //    startFlag = 1;
+                        //}
                         return t === s.Uninitialized ? (e.connectionStatus$.next(s.Connecting), e.token && e.streamUrl ? (e.connectionStatus$.next(s.Online), i.Observable.of(t)) : e.startConversation().do(function (t) {
                             e.conversationId = t.conversationId, e.token = e.secret || t.token, e.streamUrl = t.streamUrl, e.referenceGrammarId = t.referenceGrammarId, e.secret || e.refreshTokenLoop(), e.connectionStatus$.next(s.Online)
                         }, function (t) {
@@ -7730,87 +7731,87 @@ if(typeof(mobileGetId) == 'undefined'){
                             className: "wc-message-from wc-message-from-" + r
                         }))
                     } else {
-                        //KSO First DLG HIDE 
-                        var activityId = this.props.activity.id;
-                        //var activityNum = activityId.split('|');
-                        var ssoIdCheck = this.props.activity.text;
-                        if(typeof(ssoIdCheck) != 'undefined'){
-                            ssoIdCheck = ssoIdCheck.substr(0, 5);
-                            ssoFlag = 1;
-                        }
+                        ////KSO First DLG HIDE 
+                        //var activityId = this.props.activity.id;
+                        ////var activityNum = activityId.split('|');
+                        //var ssoIdCheck = this.props.activity.text;
+                        //if(typeof(ssoIdCheck) != 'undefined'){
+                        //    ssoIdCheck = ssoIdCheck.substr(0, 5);
+                        //    ssoFlag = 1;
+                        //}
 
-                        if (ssoFlag == 1 && ssoIdCheck != '' &&
-                            (location.href == defaultUrl
-                            || location.href == defaultUrl_pc
-                            || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_pc.html'
-                            || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_m.html'
-                            || location.href == defaultUrl_m + "?cjworld_id=" + mobileGetId)) {
-                            return o.createElement("div", {
-                                "data-activity-id": this.props.activity.id,
-                                className: i + " dpN",
-                                onClick: this.props.onClickActivity
-                            }, o.createElement("div", {
-                                className: "wc-message wc-message-from-" + r,
-                                ref: function (t) {
-                                    return e.messageDiv = t
-                                }
-                            }, o.createElement("div", {
-                                className: s
-                            },this.props.children)), o.createElement("div", {
-                                    className: "wc-message-from wc-message-from-" + r
-                            }))
-                        } else {
-                            return o.createElement("div", {
-                                "data-activity-id": this.props.activity.id,
-                                className: i,
-                                onClick: this.props.onClickActivity
-                            }, o.createElement("div", {
-                                className: "wc-message wc-message-from-" + r,
-                                ref: function (t) {
-                                    return e.messageDiv = t
-                                }
-                            }, o.createElement("div", {
-                                className: s
-                            },
-                                o.createElement("img", {
-                                    src: "assets/image/chatbotStyle/ico_profi_80.png", className: "wc-message-callout"
-                                }
-                                ), this.props.children)), o.createElement("div", {
-                                    className: "wc-message-from wc-message-from-" + r
-                                }))
-                        }
+                        //if (ssoFlag == 1 && ssoIdCheck != '' &&
+                        //    (location.href == defaultUrl
+                        //    || location.href == defaultUrl_pc
+                        //    || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_pc.html'
+                        //    || location.href == 'file:///C:/Users/User/source/repos/cjEmployeeChatBot_WEB/webapps/ROOT/index_m.html'
+                        //    || location.href == defaultUrl_m + "?cjworld_id=" + mobileGetId)) {
+                        //    return o.createElement("div", {
+                        //        "data-activity-id": this.props.activity.id,
+                        //        className: i + " dpN",
+                        //        onClick: this.props.onClickActivity
+                        //    }, o.createElement("div", {
+                        //        className: "wc-message wc-message-from-" + r,
+                        //        ref: function (t) {
+                        //            return e.messageDiv = t
+                        //        }
+                        //    }, o.createElement("div", {
+                        //        className: s
+                        //    },this.props.children)), o.createElement("div", {
+                        //            className: "wc-message-from wc-message-from-" + r
+                        //    }))
+                        //} else {
+                        //    return o.createElement("div", {
+                        //        "data-activity-id": this.props.activity.id,
+                        //        className: i,
+                        //        onClick: this.props.onClickActivity
+                        //    }, o.createElement("div", {
+                        //        className: "wc-message wc-message-from-" + r,
+                        //        ref: function (t) {
+                        //            return e.messageDiv = t
+                        //        }
+                        //    }, o.createElement("div", {
+                        //        className: s
+                        //    },
+                        //    o.createElement("img", {
+                        //        src: "assets/image/chatbotStyle/ico_profi_80.png", className: "wc-message-callout"
+                        //    }
+                        //    ), this.props.children)), o.createElement("div", {
+                        //        className: "wc-message-from wc-message-from-" + r
+                        //    }))
+                        //}
 
                         //origin
-                        //return o.createElement("div", {
-                        //    "data-activity-id": this.props.activity.id,
-                        //    className: i,
-                        //    onClick: this.props.onClickActivity
-                        //}, o.createElement("div", {
-                        //    className: "wc-message wc-message-from-" + r,
-                        //        ref: function (t) {
-                        //            //tts
-                        //            //lfn_speakTTS(t);
-                        //        return e.messageDiv = t
-                        //    }
-                        //}, o.createElement("div", {
-                        //    className: s
-                        //},
-                        //    o.createElement("img", {
-                        //        src: "assets/image/chatbotStyle/ico_profi_80.png", className:"wc-message-callout"
+                        return o.createElement("div", {
+                            "data-activity-id": this.props.activity.id,
+                            className: i,
+                            onClick: this.props.onClickActivity
+                        }, o.createElement("div", {
+                            className: "wc-message wc-message-from-" + r,
+                                ref: function (t) {
+                                    //tts
+                                    //lfn_speakTTS(t);
+                                return e.messageDiv = t
+                            }
+                        }, o.createElement("div", {
+                            className: s
+                        },
+                        o.createElement("img", {
+                            src: "assets/image/chatbotStyle/ico_profi_80.png", className:"wc-message-callout"
+                        }
+                        //    o.createElement("svg", {
+                        //    className: "wc-message-callout"
                         //}
-                        ////    o.createElement("svg", {
-                        ////    className: "wc-message-callout"
-                        ////}
-                        //    //                o.createElement("path", {
-                        //    //    className: "point-left",
-                        //    //    d: "m0,6 l6 6 v-12 z"
-                        //    //}), o.createElement("path", {
-                        //    //    className: "point-right",
-                        //    //    d: "m6,6 l-6 6 v-12 z"
-                        //    //                })
-                        //), this.props.children)), o.createElement("div", {
-                        //    className: "wc-message-from wc-message-from-" + r
-                        //}))
+                            //                o.createElement("path", {
+                            //    className: "point-left",
+                            //    d: "m0,6 l6 6 v-12 z"
+                            //}), o.createElement("path", {
+                            //    className: "point-right",
+                            //    d: "m6,6 l-6 6 v-12 z"
+                            //                })
+                        ), this.props.children)), o.createElement("div", {
+                            className: "wc-message-from wc-message-from-" + r
+                        }))
                     }
                 }, e
             }(o.Component);
